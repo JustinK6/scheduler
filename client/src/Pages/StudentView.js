@@ -1,6 +1,7 @@
 import React from "react"
 import { Button } from "react-bootstrap"
 import { useHistory } from "react-router"
+import {DayPilot, DayPilotCalendar} from "daypilot-pro-react";
 
 function StudentView() {
   // show beginning student view of their existing schedule
@@ -36,6 +37,8 @@ function StudentView() {
             </Button>
           </Form>`
         </Col>
+
+        <DayPilotCalendar />
     </div>
   );
 }
