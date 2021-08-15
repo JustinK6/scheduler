@@ -2,13 +2,6 @@ import '../App.css';
 import React, {useState, useEffect} from "react";
 import Axios from 'axios';
 import {Form, Alert, Col, Row, Button, ListGroup} from 'react-bootstrap';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link, 
-  useHistory
-} from "react-router-dom";
 
 
 function SignUp() {

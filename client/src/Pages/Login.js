@@ -6,6 +6,7 @@ import { useHistory } from "react-router"
 function Login() {
   const [username, setUsername] = useState('');
   const [pass, setPass] = useState('');
+  const [rank, setRank] = useState('');
 
   let history = useHistory();
 
@@ -13,7 +14,8 @@ function Login() {
     Axios.get('http://localhost:3002/api/getUser', {
       params: {
         user: username,
-        Pass: pass
+        Pass: pass, 
+        Rank: rank
       }
     }).then((res) => {
       if(res.data && res.data.ID){
@@ -25,9 +27,9 @@ function Login() {
         window.localStorage.setItem('user', JSON.stringify(u));
       };
       
-      if(res.data && res.data.ing[0]){
+      if(res.data && res.data.ing[0]) {
         window.localStorage.setItem('userIng', JSON.stringify(res.data.ing));
-      }else{
+      } else {
         window.localStorage.setItem('userIng', JSON.stringify([]));
       }
     })
@@ -47,6 +49,10 @@ function Login() {
         >
         </div>
           <Form>
+            <Form.Group controlId="formRank">
+              <Form.Label>Student or Teacher View?</Form.Label>
+              <Form.Control placeholder="Student/Teacher" onChange={(e)=>{setRank(e.target.value)}}/>
+            </Form.Group>
             <Form.Group controlId="formUsername">
               <Form.Label>Username</Form.Label>
               <Form.Control placeholder="Enter Username" onChange={(e)=>{setUsername(e.target.value)}}/>
@@ -55,9 +61,9 @@ function Login() {
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" placeholder="Password" onChange={(e)=>{setPass(e.target.value)}} />
             </Form.Group>
-            <Button variant="primary" type="submit" onClick={findUser}>
+            <button onClick={() =>{history.push("/")}}>
               Submit
-            </Button>
+            </button>
           </Form>
         </Col>
     </div>
