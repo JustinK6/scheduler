@@ -21,17 +21,27 @@ let db = new sqlite3.Database('./db/data.db', (err) => {
 
 app.post("/api/createUser", (require, response) => {
   const ID = Math.floor((Math.random() * 100000000) + 1);
+  const user = require.body.user;
   const pass = require.body.pass;
-  const Email = require.body.ID;
+  const school = require.body.school;
+  const ranking = require.body.rank;
 
-  const sqlInsert = "INSERT INTO `Users` (`UserID`, `Pass`, `Email`) VALUES (?,?,?)";
-  db.run(sqlInsert, [ID, pass, Email], function(err) {
+  const sqlInsert = "INSERT INTO `Users` (`UserID`, `user`, `pass`, `school`, `ranking`) VALUES (?,?,?,?,?)";
+  db.run(sqlInsert, [ID, user, pass, school, ranking], function(err) {
     if (err) {
       return console.log(err.message);
     }
     // get the last insert id
     console.log(`A row has been inserted with rowid ${this.lastID}`);
   });
+});
+
+app.get("/api/getUser", (require, response) => {
+  const user = require.query.user;
+  const pass = require.query.Pass;
+
+  let id = null;
+  let sqlSelect = "SELECT u.UserID FROM Users u WHERE u.user = ? AND u.pass = ?"; 
 });
 
 app.get("/api", (req, res) => {

@@ -17,10 +17,6 @@ function SignUp() {
   const [school, setSchool] = useState('');
   const [rank, setRank] = useState('');
 
-  const [findID, setFindID] = useState('');
-  const [findEmail, setFindEmail] = useState('');
-  const [findPass, setFindPass] = useState('');
-
   const uploadedImage = React.useRef(null);
   const imageUploader = React.useRef(null);
 
@@ -47,48 +43,13 @@ function SignUp() {
     },
   };
 
-  const getUserData = (user) => {
-    return new Promise(async (resolve, reject) => {
-      const path = "/api/getUser/" + user;
-  
-      await fetch(path, GET)
-        .then(async response => {
-          const res = await response.json();
-          resolve(res);
-        })
-        .catch(error => {
-          console.error("Error: ", error);
-          reject(error);
-        });
-    });
-  };
-
   const addUser = (e) => {
     Axios.post('http://localhost:3001/api/createUser', {
-      ID: username,
+      user: username,
       pass: pass,
       school: school,
       rank: rank
     });
-  }
-
-  const findUser = (e) => {
-    // Axios.post('http://localhost:3002/api/getUser', {
-    //   params: {
-    //     ID: findID
-    //   }
-    // }).then((response) => {
-    //   console.log(response);
-    //   window.localStorage.setItem('res', JSON.stringify(response));
-
-    //   // setFindID(response.data.UserID);
-    //   // setFindEmail(response.data);
-    //   // setFindPass(response.data.Password);
-    //   // // response.data
-    // })44
-
-    let uData = getUserData(findID);
-    console.log(uData);
   }
 
   return (
