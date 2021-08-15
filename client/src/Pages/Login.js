@@ -61,7 +61,7 @@ function Login() {
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" placeholder="Password" onChange={(e)=>{setPass(e.target.value)}} />
             </Form.Group>
-            <button onClick={() =>{history.push("/teacherview")}}>
+            <button onClick={() =>{history.push("/")}}>
               Submit
             </button>
           </Form>

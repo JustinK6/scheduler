@@ -10,7 +10,7 @@ import {
   useHistory
 } from "react-router-dom";
 import { useState } from 'react'
-import addClassForm from "../Misc/addClassForm"
+//import addClassForm from "../Misc/addClassForm"
 
 function TeacherView() {
   // show beginning teacher view of existing classes, times, and codes
@@ -31,7 +31,7 @@ function TeacherView() {
         </nav>
         <div>
           {active == false && <div></div>}
-          {active == true && <addClassForm />}
+          {active == true && <div>hello world</div>}
         </div>
       </div>
     </Router>
