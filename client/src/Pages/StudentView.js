@@ -1,6 +1,6 @@
-import React from "react"
-import { Button } from "react-bootstrap"
+import React, {useState, useEffect} from "react";
 import { useHistory } from "react-router"
+import {Form, Alert, Col, Row, Button, ListGroup} from 'react-bootstrap';
 import {DayPilot, DayPilotCalendar} from "daypilot-pro-react";
 
 function StudentView() {
@@ -19,7 +19,7 @@ function StudentView() {
               <Form.Label>Enter Class Code</Form.Label>
               <Form.Control placeholder="Enter Class Code" type="text" onChange={(e)=>{setClassAddCode(e.target.value)}}/>
             </Form.Group>
-            <Button variant="primary" type="submit" onClick={addIngredient}>
+            <Button variant="primary" type="submit">
               Submit
             </Button>
           </Form>
@@ -32,11 +32,13 @@ function StudentView() {
               <Form.Label>Enter Class Code</Form.Label>
               <Form.Control placeholder="Enter Class Code" type="text" onChange={(e)=>{setClassDelCode(e.target.value)}}/>
             </Form.Group>
-            <Button variant="primary" type="submit" onClick={deleteIngredient}>
+            <Button variant="primary" type="submit">
               Submit
             </Button>
           </Form>`
         </Col>
+
+        <h2 className="App">Schedule</h2>
 
         <DayPilotCalendar />
     </div>
