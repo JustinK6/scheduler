@@ -1,4 +1,5 @@
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React, {useState, useEffect} from "react";
 import Axios from 'axios';
 import {Form, Alert, Col, Row, Button, ListGroup} from 'react-bootstrap';
@@ -33,6 +34,8 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/teacherview" component={TeacherView} />
         </Switch>
+
+        <Alert variant='light' />       
       </div>
     </Router>
   );
