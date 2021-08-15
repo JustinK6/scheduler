@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import Login from "./Pages/Login"
 import SignUp from "./Pages/SignUp"
+import TeacherView from "./Pages/TeacherView"
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           </Route>
           <Route path="/signup" component={SignUp} />
           <Route path="/login" component={Login} />
+          <Route path="/teacherview" component={TeacherView} />
         </Switch>
       </div>
     </Router>
