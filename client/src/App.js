@@ -14,6 +14,16 @@ import SignUp from "./Pages/SignUp"
 
 
 function App() {
+  const [email, setEmail] = useState('');
+  const [pass, setPass] = useState('');
+
+  const addUser = (e) => {
+    Axios.post('http://localhost:3001/api/createUser', {
+      ID: email,
+      pass: pass
+    });
+  }
+
   return (
     <Router>
       <div>
@@ -31,6 +41,24 @@ function App() {
           <Route path="/signup" component={SignUp} />
           <Route path="/login" component={Login} />
         </Switch>
+
+        <Alert variant='light' />
+
+        <Alert variant='primary'>Create Account</Alert>
+          <Form>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control placeholder="Enter email" onChange={(e)=>{setEmail(e.target.value)}}/>
+            </Form.Group>
+            <Form.Group controlId="formBasicPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control type="password" placeholder="Password" onChange={(e)=>{setPass(e.target.value)}} />
+            </Form.Group>
+            <Button variant="primary" type="submit" onClick={addUser}>
+              Submit
+            </Button>
+          </Form>
+        
       </div>
     </Router>
   );

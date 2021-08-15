@@ -64,7 +64,7 @@ function SignUp() {
   };
 
   const addUser = (e) => {
-    Axios.post('http://localhost:3002/api/createUser', {
+    Axios.post('http://localhost:3001/api/createUser', {
       ID: username,
       pass: pass,
       school: school,
@@ -152,26 +152,6 @@ function SignUp() {
               Submit
             </Button>
           </Form>
-{/* 
-          <Alert variant='light' />
-
-          <Alert variant='primary'>Login</Alert>
-          <Form>
-            <Form.Group controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control placeholder="Enter email" onChange={(e)=>{setEmail(e.target.value)}}/>
-            </Form.Group>
-            <Form.Group controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" onChange={(e)=>{setPass(e.target.value)}} />
-            </Form.Group>
-            <Button variant="primary" type="submit" onClick={addUser}>
-              Submit
-            </Button>
-          </Form>
-
-          <Alert variant='light' /> 
-*/}
         </Col>
     </div>
   );
