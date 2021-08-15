@@ -2,7 +2,7 @@ import React from "react"
 import { Button } from "react-bootstrap"
 import { useHistory } from "react-router"
 
-function TeacherView() {
+function StudentView() {
   // show beginning student view of their existing schedule
 
   return (
@@ -12,4 +12,4 @@ function TeacherView() {
   );
 }
 
-export default TeacherView;
+export default StudentView;
