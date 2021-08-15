@@ -35,7 +35,7 @@ function App() {
           <Route path="/teacherview" component={TeacherView} />
         </Switch>
 
-        <Alert variant='light' />       
+        <Alert variant='light' />
       </div>
     </Router>
   );
