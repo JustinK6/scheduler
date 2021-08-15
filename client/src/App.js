@@ -13,7 +13,7 @@ import {
 import Login from "./Pages/Login"
 import SignUp from "./Pages/SignUp"
 import TeacherView from "./Pages/TeacherView"
-
+import StudentView from "./Pages/StudentView"
 
 function App() {
   return (
@@ -33,6 +33,7 @@ function App() {
           <Route path="/signup" component={SignUp} />
           <Route path="/login" component={Login} />
           <Route path="/teacherview" component={TeacherView} />
+          <Route path="/studentview" component={StudentView} />
         </Switch>
 
         <Alert variant='light' />       
@@ -47,6 +48,8 @@ function Main() {
         <div class="center-screen">
           <h1><Link to="/login">Log In</Link></h1>
           <h1><Link to="/signup">Sign Up</Link></h1>
+          <h1><Link to="/teacherview">Teacher</Link></h1>
+          <h1><Link to="/studentview">Student</Link></h1>
         </div>
     </div>
   )
